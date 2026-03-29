@@ -1,16 +1,21 @@
+using Microsoft.EntityFrameworkCore;
+using TaskTracker.Api.Extensions;
+using TaskTracker.Storage.Context;
+using TaskTracker.Storage.Extensions;
+
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+var connectionString = builder.Configuration.GetConnectionString("Default") ?? string.Empty;
 
+builder.Services.AddDbContext(connectionString);
 builder.Services.AddControllers();
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
+app.Migrate<TaskTrackerContext>();
 
-app.UseHttpsRedirection();
-
-app.UseAuthorization();
+app.UseHttpsRedirection()
+    .UseAuthorization();
 
 app.MapControllers();
 
