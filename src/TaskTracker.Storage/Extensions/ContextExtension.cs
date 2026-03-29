@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
+using System.Globalization;
 using TaskTracker.Storage.Context;
 
 namespace TaskTracker.Storage.Extensions;
@@ -20,7 +21,8 @@ public static class ContextExtension
         string connectionString)
     {
         services.AddDbContext<TaskTrackerContext>(options =>
-            options.UseNpgsql(connectionString, b => b.MigrationsAssembly("TaskTracker.Migrations")));
+            options.UseNpgsql(connectionString, b => b.MigrationsAssembly("TaskTracker.Migrations"))
+                .UseSnakeCaseNamingConvention(CultureInfo.InvariantCulture));
 
         return services;
     }

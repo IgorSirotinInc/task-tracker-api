@@ -7,11 +7,18 @@
   </PropertyGroup>
 
   <ItemGroup>
-	<PackageReference Include="Microsoft.EntityFrameworkCore" Version="10.0.5" />
     <Folder Include="Controllers\" />
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="10.0.5">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\TaskTracker.Application\TaskTracker.Application.csproj" />
     <ProjectReference Include="..\TaskTracker.Migrations\TaskTracker.Migrations.csproj" />
     <ProjectReference Include="..\TaskTracker.Storage\TaskTracker.Storage.csproj" />
   </ItemGroup>

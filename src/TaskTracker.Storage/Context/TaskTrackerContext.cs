@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using TaskTracker.Domain;
 
 namespace TaskTracker.Storage.Context;
 
@@ -7,7 +8,10 @@ namespace TaskTracker.Storage.Context;
 /// </summary>
 public class TaskTrackerContext(DbContextOptions<TaskTrackerContext> options) : DbContext(options)
 {
-    // public DbSet<TaskEntity> Tasks { get; set; }
+    /// <summary>
+    /// Проекты.
+    /// </summary>
+    public DbSet<ProjectEntity> Projects { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
