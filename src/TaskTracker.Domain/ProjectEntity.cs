@@ -26,5 +26,10 @@ public class ProjectEntity : BaseNameCodeModel
     /// Дата время обновления.
     /// </summary>
     public DateTime? UpdatedAt { get; set; }
+
+    /// <summary>
+    /// Задачи.
+    /// </summary>
+    public ICollection<TaskEntity> Tasks { get; set; } = [];
 }
 
