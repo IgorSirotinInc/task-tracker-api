@@ -6,4 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\TaskTracker.Storage\TaskTracker.Storage.csproj" />
+  </ItemGroup>
+
 </Project>
