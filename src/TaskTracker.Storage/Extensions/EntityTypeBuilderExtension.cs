@@ -23,9 +23,10 @@ public static partial class EntityTypeBuilderExtension
     /// <typeparam name="TEntity">Тип сущности, наследуемый от <see cref="BaseModel"/>.</typeparam>
     /// <param name="builder">Построитель конфигурации сущности.</param>
     /// <returns>Текущий экземпляр <see cref="EntityTypeBuilder{TEntity}"/> для цепочки вызовов.</returns>
-    public static EntityTypeBuilder<TEntity> ConfigureBaseColumns<TEntity>(
+    public static EntityTypeBuilder<TEntity> ConfigureBaseColumns<TEntity,TIdentifier>(
         this EntityTypeBuilder<TEntity> builder)
-        where TEntity : BaseModel
+        where TEntity : BaseModel<TIdentifier>
+        where TIdentifier : struct
     {
         var prefix = GetEntityPrefix<TEntity>();
 

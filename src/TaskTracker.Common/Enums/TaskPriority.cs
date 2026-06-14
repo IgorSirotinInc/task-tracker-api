@@ -1,11 +1,9 @@
-﻿using TaskTracker.Common.EntityBase;
-
-namespace TaskTracker.Common.Enums;
+﻿namespace TaskTracker.Common.Enums;
 
 /// <summary>
 /// Перечеисление приоритетов для Task.
 /// </summary>
-public class TaskPriority : BaseModel
+public class TaskPriority
 {
     /// <summary>
     /// Низкий.

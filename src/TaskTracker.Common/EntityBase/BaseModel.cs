@@ -3,12 +3,12 @@
 /// <summary>
 /// Базовая модель для сущностей.
 /// </summary>
-public abstract class BaseModel
+public abstract class BaseModel<TIdentifier> where TIdentifier : struct
 {
     /// <summary>
     /// Идентификатор.
     /// </summary>
-    public int Id { get; set; }
+    public TIdentifier Id { get; set; }
 
     /// <summary>
     /// Глобальный идентификатор.

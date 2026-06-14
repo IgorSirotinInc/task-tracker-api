@@ -15,7 +15,7 @@ internal class TaskConfiguation : IEntityTypeConfiguration<TaskEntity>
     {
         builder.ToTable("task");
 
-        builder.ConfigureBaseColumns();
+        builder.ConfigureBaseColumns<TaskEntity, long>();
 
         builder.HasProperty(x => x.Number, "number").IsRequired(true);
         builder.HasProperty(x => x.Title, "title").IsRequired(true);

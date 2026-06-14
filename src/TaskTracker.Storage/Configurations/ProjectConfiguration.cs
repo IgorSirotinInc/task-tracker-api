@@ -15,9 +15,8 @@ internal class ProjectConfiguration : IEntityTypeConfiguration<ProjectEntity>
     {
         builder.ToTable("project");
 
-        builder.ConfigureBaseColumns();
+        builder.ConfigureBaseColumns<ProjectEntity, int>();
 
-        builder.HasProperty(x => x.Code, "code").IsRequired(true);
         builder.HasProperty(x => x.Name, "name").IsRequired(true);
         builder.HasProperty(x => x.Key, "key").IsRequired(true);
         builder.HasProperty(x => x.Description, "description").IsRequired(false);

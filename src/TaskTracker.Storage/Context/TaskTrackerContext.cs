@@ -11,7 +11,7 @@ public class TaskTrackerContext(DbContextOptions<TaskTrackerContext> options) : 
     /// <summary>
     /// Проекты.
     /// </summary>
-    public DbSet<ProjectEntity> Projects { get; set; }
+    public DbSet<ProjectEntity> Projects { get; set; } = null!;
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

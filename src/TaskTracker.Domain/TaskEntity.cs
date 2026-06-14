@@ -5,7 +5,7 @@ namespace TaskTracker.Domain;
 /// <summary>
 /// Задача.
 /// </summary>
-public class TaskEntity : BaseModel
+public class TaskEntity : BaseModel<long>
 {
     /// <summary>
     /// Идентификатор проекта.

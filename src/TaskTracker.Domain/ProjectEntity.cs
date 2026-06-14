@@ -5,7 +5,7 @@ namespace TaskTracker.Domain;
 /// <summary>
 /// Проект.
 /// </summary>
-public class ProjectEntity : BaseNameCodeModel
+public class ProjectEntity : BaseGuidNameModel<int>
 {
     /// <summary>
     /// Ключ.
